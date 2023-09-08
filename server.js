@@ -1,10 +1,6 @@
-const express = require('express');
-const app = express();
-const port = 8080;
-const mongoose = require('mongoose');
+const app = require('./src/app');
+const PORT = process.env.PORT || 8080;
 
-
-
-app.listen(port, () => {
-    console.log('app listening on port ' + port);
+const server = app.listen(PORT,()=>{
+    console.log(`WSV eComerece start with ${PORT}`)
 })
