@@ -18,7 +18,7 @@ app.use(compression(),
 // init db
 require('./db/init.mongodb');
 // init routes
-
+app.use('', require('./routes/index'));
 // handling error
 app.use((req,res,next) =>{
     const error = new Error('Not Found');
