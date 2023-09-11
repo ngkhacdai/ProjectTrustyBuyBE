@@ -26,25 +26,24 @@ var userSchema = new Schema({
         unique: true,
         index: true
     },
-    status:{
-        type:String,
-        enum:['active','inactive'],
-        default:'inactive'
+    status: {
+        type: String,
+        enum: ['active', 'inactive'],
+        default: 'inactive'
     },
-    user_avatar:{type:Schema.Types.ObjectId,ref:'Photo'},
-    user_gender:{
-        type:String,
-        enum:['Male','Female','Unisex'],
+    user_avatar: String,
+    user_gender: {
+        type: String,
+        enum: ['Male', 'Female', 'Unisex'],
     },
-    user_address:{type:Schema.Types.ObjectId,ref:'Address'},
-
-},{
-    timestamps:true,
-    collection:COLLECTION_NAME
+    user_address: { type: Schema.Types.ObjectId, ref: 'Address' },
+}, {
+    timestamps: true,
+    collection: COLLECTION_NAME
 })
 
 
 
 
 
-module.exports = mongoose.model(DOCUMENT_NAME,userSchema);
+module.exports = mongoose.model(DOCUMENT_NAME, userSchema);
